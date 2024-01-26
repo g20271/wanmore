@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>A-Frame GLB Example</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+</head>
+
+<body>
+    <a-scene embedded arjs vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;">
+        <a-assets>
+            <a-asset-item id="device" src="device.glb"></a-asset-item>
+        </a-assets>
+
+
+        <a-marker type="pattern" url="marker.patt">
+            <!-- 3Dモデルを呼び出す -->
+            <a-entity gltf-model="#device"></a-entity>
+        </a-marker>
+
+
+        <a-entity camera></a-entity>
+        <!-- glTF model component to load the glb file -->
+        <!-- <a-gltf-model position="20 0 -4" src="device.glb"></a-gltf-model> -->
+
+        <!-- Camera to view the scene -->
+        <!-- <a-entity camera look-controls></a-entity> -->
+
+        <!-- Optional ground plane -->
+        <!-- <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#7BC8A4"></a-plane> -->
+    </a-scene>
+</body>
+
+</html>
